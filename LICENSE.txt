@@ -1,0 +1,35 @@
+SCP Frontier — The Silent Outpost, v0.0.1
+Copyright 2026 Poyueh. An unofficial SCP Foundation derivative game.
+
+This distributed SCP Frontier game, including the Poyueh-authored game content,
+compiled game scripts, original pixel visuals, synthetic audio and player guide
+in this release, is offered under Creative Commons Attribution-ShareAlike 3.0
+Unported (CC BY-SA 3.0), except the separately licensed third-party components
+identified below. You may share and adapt this game, including commercially,
+under that license. Retain attribution, identify changes and share adaptations
+under the same license. No additional DRM or noncommercial restriction is added.
+
+License: https://creativecommons.org/licenses/by-sa/3.0/
+Full license: CC-BY-SA-3.0.txt
+Attribution: SCP Frontier by Poyueh,
+https://github.com/Poyueh/scp-frontier-demo
+
+SCP Foundation concepts originate from the SCP Wiki and its authors:
+https://scp-wiki.wikidot.com/
+SCP-280 by Dr Gears, https://scp-wiki.wikidot.com/scp-280
+SCP-280 is licensed under CC BY-SA 3.0. Adaptation: a short directional-light
+encounter and dark-cell isolation scene. Corridor layout, external switch and
+pacing are gameplay inventions; the scenario does not simulate every ability
+in the original article. No article photograph or Foundation logo is used.
+This game is not endorsed by the SCP Wiki.
+
+Third-party exceptions:
+- Godot Engine and bundled components retain MIT and their respective licenses.
+  See GODOT-NOTICES.txt. https://godotengine.org/license/
+- Noto Sans TC and Noto Sans SC retain SIL Open Font License 1.1.
+  See FONT-LICENSES.txt. https://github.com/notofonts/noto-cjk
+
+This license applies to this distributed SCP game. It does not grant a blanket
+license to unreleased development repositories, Cyber Kingdom as a separate
+work, or materials excluded from this distribution. Repository privacy does not
+restrict the rights granted above in the published adaptation.
