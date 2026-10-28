@@ -1,0 +1,7 @@
+.godot/
+.generated/
+export_credentials.cfg
+*.p12
+*.pfx
+*.key
+.DS_Store
