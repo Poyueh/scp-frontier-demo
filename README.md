@@ -1,10 +1,10 @@
 # SCP Frontier — 林緣失聯前哨
 
-[開始試玩](https://poyueh.github.io/scp-frontier-demo/) · [操作指南](https://poyueh.github.io/scp-frontier-demo/guide.html) · [v0.0.1 下載與紀錄](https://github.com/Poyueh/scp-frontier-demo/releases/tag/v0.0.1)
+[開始試玩](https://poyueh.github.io/scp-frontier-demo/) · [操作指南](https://poyueh.github.io/scp-frontier-demo/guide.html) · [v0.0.2 下載與紀錄](https://github.com/Poyueh/scp-frontier-demo/releases/tag/v0.0.2)
 
 你是重建指揮官。啟動前哨、安排工程師、沿訊號探索廊道，取回脈衝裝置，再觀察並重新隔離 SCP-280。
 
-v0.0.1 是首區早期原型，含繁體中文、简体中文與 English。建議電腦鍵盤遊玩；手機觸控與效能仍在測試，正式美術及新玩家盲測尚未完成。
+v0.0.2 是首區早期原型，含繁體中文、简体中文與 English；已更新霧林、供能前哨及工程工作棚像素美術。建議電腦鍵盤遊玩；手機觸控與效能仍在測試，角色動畫與新玩家盲測尚未完成。
 
 A／D 移動，同向雙按並按住衝刺；J／左鍵攻擊；E 互動與投入物資；K 脈衝；F 定向照明；Esc 暫停。進度儲存在目前瀏覽器和網站；清除網站資料會刪除紀錄。
 
