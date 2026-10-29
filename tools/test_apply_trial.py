@@ -1,6 +1,6 @@
-import base64, copy, hashlib, json, tempfile, unittest, zlib
+import base64, copy, hashlib, json, tempfile, unittest, zlib, zipfile, stat
 from pathlib import Path
-from apply_trial import reconstruct, sha, name_ok, apply_trial
+from apply_trial import reconstruct, sha, name_ok, apply_trial, install_baseline, baseline_name_ok
 
 def literal(data):
     return {'zlib':base64.b64encode(zlib.compress(data)).decode(),'length':len(data)}
@@ -47,6 +47,22 @@ class DeltaTests(unittest.TestCase):
             self.assertEqual(list(root.glob('.trial-*')),[])
     def test_public_spec_path(self):
         self.assertTrue(name_ok('spec/index.html'))
+    def test_native_and_legacy_paths(self):
+        for name in ['spec/style.css','spec/reader.js','spec/manifest.json','social/scp-frontier-brand.png','legacy/v0.0.4/index.html','legacy/v0.0.4/spec/index.html']:
+            self.assertTrue(name_ok(name),name)
+        for name in ['spec/assets/private.py','legacy/v0.0.4/private.py','legacy/v0.0.4/../index.html','legacy/v0.0.3/index.html','social/other.png']:
+            self.assertFalse(name_ok(name),name)
+    def test_missing_transport_chunk_atomic(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);site=root/'site';site.mkdir();(site/'play.pck').write_bytes(self.source)
+            payload=root/'payload';payload.mkdir();part=json.dumps(self.patch).encode();(payload/'one').write_bytes(part)
+            request=root/'request.json';request.write_text(json.dumps({'format':1,'version':'0.0.5',
+                'baseline_files':{'play.pck':sha(self.source)},'files':{'index-v0.0.5.pck':{'mode':'delta','source':'play.pck',
+                'payloads':[{'path':'payload/one','sha256':sha(part)},{'path':'payload/missing','sha256':sha(b'x')}],
+                'size':len(self.target),'sha256':sha(self.target)}}}))
+            with self.assertRaises(FileNotFoundError):apply_trial(site,request)
+            self.assertEqual((site/'play.pck').read_bytes(),self.source)
+            self.assertEqual(list(root.glob('.trial-*')),[])
     def test_atomic_corrupt_payload(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);site=root/'site';site.mkdir();(site/'keep.txt').write_bytes(b'unchanged')
@@ -72,6 +88,10 @@ class DeltaTests(unittest.TestCase):
                 files[name]={'mode':mode,'size':len(data),'sha256':sha(data),'payload':'payload/'+pname,'payload_sha256':sha(pdata)}
             public=b'<html>Public design spec</html>';(payload/'spec-index.html').write_bytes(public)
             files['spec/index.html']={'mode':'file','size':len(public),'sha256':sha(public),'payload':'payload/spec-index.html','payload_sha256':sha(public)}
+            (payload/'chunk1').write_bytes(patch[:5]);(payload/'chunk2').write_bytes(patch[5:])
+            files['play.pck'].pop('payload');files['play.pck'].pop('payload_sha256')
+            files['play.pck']['payloads']=[{'path':'payload/chunk1','sha256':sha(patch[:5])},{'path':'payload/chunk2','sha256':sha(patch[5:])}]
+            files['legacy/v0.0.4/LICENSE.txt']={'mode':'keep','source':'LICENSE.txt','size':7,'sha256':sha(b'license')}
             files['play-v0.0.3.pck']=files.pop('play.pck');files['play-v0.0.3.pck']['source']='play.pck'
             request=root/'current.json';request.write_text(json.dumps({'format':1,'version':'0.0.3','baseline_files':baseline,'files':files}))
             apply_trial(site,request)
@@ -79,5 +99,47 @@ class DeltaTests(unittest.TestCase):
             self.assertEqual(set(p.relative_to(site).as_posix() for p in site.rglob('*') if p.is_file()),set(files))
             self.assertEqual((site/'spec/index.html').read_bytes(),public)
             self.assertFalse((root/'site.baseline').exists())
+
+class BaselineTests(unittest.TestCase):
+    def fixture(self,root,entries,inventory=None):
+        archive=root/'baseline.zip'
+        with zipfile.ZipFile(archive,'w') as z:
+            for name,data in entries:z.writestr(name,data)
+        inventory=inventory if inventory is not None else {n:sha(d) for n,d in entries if isinstance(n,str)}
+        data=archive.read_bytes();request=root/'request.json'
+        request.write_text(json.dumps({'baseline_archive':{'size':len(data),'sha256':sha(data)},'baseline_files':inventory}))
+        return archive,request
+    def test_exact_nested_baseline(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);archive,request=self.fixture(root,[('index.pck',b'packed'),('spec/manifest.json',b'{}'),('spec/assets/a.webp',b'image')])
+            install_baseline(archive,root/'site',request)
+            self.assertEqual((root/'site/spec/assets/a.webp').read_bytes(),b'image')
+    def test_corrupt_archive_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);archive,request=self.fixture(root,[('index.pck',b'packed')]);archive.write_bytes(archive.read_bytes()+b'bad')
+            with self.assertRaisesRegex(ValueError,'Pinned baseline'):install_baseline(archive,root/'site',request)
+            self.assertFalse((root/'site').exists())
+    def test_unsafe_or_extra_member_rejected(self):
+        for name in ['../secret.txt','/absolute.txt','spec/../../bad.txt','secret.py','extra.txt']:
+            with self.subTest(name=name),tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp);archive,request=self.fixture(root,[('index.pck',b'packed'),(name,b'x')],{'index.pck':sha(b'packed')})
+                with self.assertRaises(ValueError):install_baseline(archive,root/'site',request)
+                self.assertFalse((root/'site').exists())
+    def test_member_hash_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);archive,request=self.fixture(root,[('index.pck',b'packed')],{'index.pck':sha(b'wrong')})
+            with self.assertRaisesRegex(ValueError,'member checksum'):install_baseline(archive,root/'site',request)
+    def test_symlink_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);info=zipfile.ZipInfo('index.pck');info.create_system=3;info.external_attr=(stat.S_IFLNK|0o777)<<16
+            archive,request=self.fixture(root,[(info,b'/tmp/private')],{'index.pck':sha(b'/tmp/private')})
+            with self.assertRaisesRegex(ValueError,'symlink'):install_baseline(archive,root/'site',request)
+    def test_missing_member_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);archive,request=self.fixture(root,[('index.pck',b'packed')],{'index.pck':sha(b'packed'),'index.js':sha(b'missing')})
+            with self.assertRaisesRegex(ValueError,'Missing'):install_baseline(archive,root/'site',request)
+    def test_baseline_paths(self):
+        for name in ['spec/../private.txt','spec//index.html','.git/config','a\\b.png','spec/assets/.secret.webp','social/../secret.png']:
+            self.assertFalse(baseline_name_ok(name),name)
 
 if __name__=='__main__':unittest.main()

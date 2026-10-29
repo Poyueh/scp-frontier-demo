@@ -34,21 +34,26 @@ jobs:
           RELEASE_TAG: ${{ inputs.tag }}
           EVENT_NAME: ${{ github.event_name }}
         run: |
-          if [[ "$EVENT_NAME" == "push" ]]; then
-            RELEASE_TAG=$(python3 -c 'import json; print(json.load(open("trial/current.json"))["baseline_tag"])')
-          fi
-          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit 1
           mkdir release
-          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --dir release --pattern "SCP-Frontier-Web-${RELEASE_TAG#v}.zip" --pattern SHA256SUMS.txt
           if [[ "$EVENT_NAME" == "push" ]]; then
-            python3 -c 'import hashlib,json,pathlib; m=json.load(open("trial/current.json"))["baseline_archive"]; p=pathlib.Path("release")/m["name"]; data=p.read_bytes(); assert len(data)==m["size"] and hashlib.sha256(data).hexdigest()==m["sha256"], "Pinned baseline archive mismatch"'
+            mapfile -t BASELINE < <(python3 -c 'import json; m=json.load(open("trial/current.json")); print(m.get("baseline_repository", "Poyueh/scp-frontier-demo")); print(m["baseline_tag"]); print(m["baseline_archive"]["name"])')
+            BASELINE_REPO="${BASELINE[0]}"
+            RELEASE_TAG="${BASELINE[1]}"
+            ARCHIVE_NAME="${BASELINE[2]}"
+            [[ "$BASELINE_REPO" == "Poyueh/scp-frontier-demo" || "$BASELINE_REPO" == "Poyueh/cyber-kingdom-demo" ]] || exit 1
+            [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit 1
+            [[ "$ARCHIVE_NAME" =~ ^[A-Za-z0-9._-]+\.zip$ ]] || exit 1
+            python3 -c 'import sys,urllib.request; repo,tag,name=sys.argv[1:]; urllib.request.urlretrieve("https://github.com/"+repo+"/releases/download/"+tag+"/"+name,"release/"+name)' "$BASELINE_REPO" "$RELEASE_TAG" "$ARCHIVE_NAME"
+            python3 -m unittest discover -s tools -p 'test_*.py'
+            python3 tools/apply_trial.py --baseline-archive "release/$ARCHIVE_NAME" --site _site --request trial/current.json
+            gh release download v0.0.2 --repo "$GITHUB_REPOSITORY" --dir release --pattern SCP-Frontier-Web-0.0.2.zip --clobber
+            mkdir -p _site/legacy
+            python3 tools/apply_trial.py --baseline-archive release/SCP-Frontier-Web-0.0.2.zip --site _site/legacy/v0.0.4 --request trial/legacy-v004/current.json
+          else
+            [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit 1
+            gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --dir release --pattern "SCP-Frontier-Web-${RELEASE_TAG#v}.zip" --pattern SHA256SUMS.txt
+            python3 tools/unpack_release.py --release release --site _site --tag "$RELEASE_TAG"
           fi
-          python3 tools/unpack_release.py --release release --site _site --tag "$RELEASE_TAG"
-      - name: Verify and stage the exact tested trial
-        if: github.event_name == 'push'
-        run: |
-          python3 -m unittest discover -s tools -p 'test_*.py'
-          python3 tools/apply_trial.py --site _site --request trial/current.json
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:

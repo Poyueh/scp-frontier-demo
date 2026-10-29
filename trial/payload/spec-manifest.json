@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "game_version": "0.0.5",
+  "revision": 226,
+  "updated": "2026-10-29",
+  "content_sha256": "4c3223b1899b7975c98b1964ff6e18b1640d7c92a281f200884d7af0a84b230f",
+  "files": {
+    "index.html": "e14a5011cf7dce698f74d1a24e15728103cae319ddc4c1a0a7395b95763f15e9",
+    "reader.js": "6cc33a6ae719d50267acced5b925c88847b45550adfa92b61b9200a10fec7a4d",
+    "style.css": "db898ef6d830f3adb0dd712ae7f57c6148a9ed2d2a5a002dd0a0b26ad89d30ef"
+  }
+}

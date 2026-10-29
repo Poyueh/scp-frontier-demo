@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-		<title>SCP Frontier — 林緣失聯前哨</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<title>SCP Frontier Forest Demo</title>
 		<style>
 html, body, #canvas {
 	margin: 0;
@@ -38,7 +38,7 @@ body {
 }
 
 #status {
-	background-color: #242424;
+	background-color: #101826;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -89,13 +89,29 @@ body {
 	text-align: center;
 	z-index: 1;
 }
-		
-body{overscroll-behavior:none;background:#101b24} #status{background:#101b24} #status-brand{font:600 22px system-ui;letter-spacing:.12em;color:#d6d5c6;text-align:center} #status-brand small{display:block;margin-top:18px;font:14px system-ui;letter-spacing:0;color:#dda864}
-</style>
-		<link id="-gd-engine-icon" rel="icon" type="image/png" href="play.icon.png" />
-<link rel="apple-touch-icon" href="play.apple-touch-icon.png"/>
-<script src="frame-pacing.js"></script>
-	<script src="mobile-shell.js?v=0.0.4"></script></head>
+		</style>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script src="phone-display.js"></script><script src="frame-pacing.js"></script><link rel="stylesheet" href="touch-guard.css"><script src="touch-guard.js"></script><link rel="stylesheet" href="orientation.css"><script src="orientation.js" defer></script><script src="fullscreen.js"></script><link rel="stylesheet" href="guide-reader.css"><link rel="stylesheet" href="loading-illustration.css"><script src="guide-reader.js" defer></script>
+	<!-- social-preview:start -->
+<meta name="description" content="在失聯森林建立據點、招募駐地人員、探索遺留設施並穩定裂隙。橫向動作與據點守備，支援電腦與手機瀏覽器試玩。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="SCP Frontier">
+<meta property="og:title" content="SCP Frontier：失聯隔離區｜森林免費試玩">
+<meta property="og:description" content="在失聯森林建立據點、招募駐地人員、探索遺留設施並穩定裂隙。橫向動作與據點守備，支援電腦與手機瀏覽器試玩。">
+<meta property="og:image" content="https://poyueh.github.io/scp-frontier-demo/social/scp-frontier-brand.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="960">
+<meta property="og:image:height" content="450">
+<meta property="og:image:alt" content="SCP Frontier 遊戲標誌與失聯隔離區主題">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SCP Frontier：失聯隔離區｜森林免費試玩">
+<meta name="twitter:description" content="在失聯森林建立據點、招募駐地人員、探索遺留設施並穩定裂隙。橫向動作與據點守備，支援電腦與手機瀏覽器試玩。">
+<meta name="twitter:image" content="https://poyueh.github.io/scp-frontier-demo/social/scp-frontier-brand.png">
+<meta property="og:url" content="https://poyueh.github.io/scp-frontier-demo/">
+<!-- social-preview:end -->
+</head>
 	<body>
 		<canvas id="canvas">
 			Your browser does not support the canvas tag.
@@ -105,15 +121,15 @@ body{overscroll-behavior:none;background:#101b24} #status{background:#101b24} #s
 			Your browser does not support JavaScript.
 		</noscript>
 
-		<div id="status"><div id="status-brand">SCP FRONTIER<small id="loading-label">正在載入 · Loading…</small></div>
-			<img id="status-splash" class="show-image--false fullsize--true use-filter--true" src="play.png" alt="">
+		<div id="status">
+			<img id="status-splash" class="show-image--true fullsize--true use-filter--false" src="index.png" alt="">
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
 
-		<script src="play.js?v=0.0.4"></script>
+		<script src="index.js?v=0.0.5"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"play","experimentalVK":false,"fileSizes":{"play.wasm":39514754,"play-v0.0.4.pck":19125836},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"mainPack":"play-v0.0.4.pck"};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.wasm":39514754,"index-v0.0.5.pck":79744872},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"mainPack":"index-v0.0.5.pck","persistentPaths":["/userfs/SCP Frontier Native Forest Demo"]};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 

@@ -1,0 +1,161 @@
+{
+  "format": 1,
+  "version": "0.0.4",
+  "baseline_tag": "v0.0.2",
+  "baseline_files": {
+    "CC-BY-SA-3.0.txt": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f",
+    "FONT-LICENSES.txt": "b89257ee131529bba3dd1f1e0139f1e931d6fbffb629e086b9d7394bfa59373a",
+    "GODOT-NOTICES.txt": "3ffe1d3b19a3e2bcdeb9e0607046170d610c0016403534a3eeb720166b2d690c",
+    "LICENSE.txt": "5dd5ec3cebefeba2131d208bc8a8e6bc97d5c8c9bdf24de5d8e0de1d006b109e",
+    "README.txt": "135daf1b5d49d9a70e69b6cd64349d210197c425b6432d84ed129fe0aad89d41",
+    "build-info.json": "3bea5d3c989d076accce3d76784942fb430034142334e5c18d259afeabbb9a4d",
+    "credits.html": "e700284cbbcd4f6b21db2514604ca3dd23d2c6b9d5e52a06deac327aa42f2e59",
+    "frame-pacing.js": "6cca948c379080fc1a56d5644904629c2ec606e2e06f8662ad7aff93ec3f2e1e",
+    "guide.html": "8a0c66e63927e4bfd736cf924980d44237c5b4c6f0b5f727ae10b4ccfa793a69",
+    "index.html": "e98fb8516aa49109e86c8b664f8fc113311c3f2f251108448af358166c3f4694",
+    "play.apple-touch-icon.png": "dff8f10f7b72793eb20836e0cd6741557fafcec3fbc992ba77039b0d9fe1d68c",
+    "play.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "play.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "play.html": "073f1752651a0f83fe7eb1e6a15f731612f408fa7229f0c6934c2110b5af9f11",
+    "play.icon.png": "198418a77a91abbf8230649884691d9c9ed213a67521dc29a465afcf8cf0d722",
+    "play.js": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+    "play.pck": "1e90c11847f3a9f190b7460e27c17e9efd28cab83634d81ca7111f6415304ead",
+    "play.png": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+    "play.wasm": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+  },
+  "files": {
+    "CC-BY-SA-3.0.txt": {
+      "size": 22240,
+      "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f",
+      "mode": "keep"
+    },
+    "FONT-LICENSES.txt": {
+      "size": 8646,
+      "sha256": "b89257ee131529bba3dd1f1e0139f1e931d6fbffb629e086b9d7394bfa59373a",
+      "mode": "keep"
+    },
+    "GODOT-NOTICES.txt": {
+      "size": 98267,
+      "sha256": "3ffe1d3b19a3e2bcdeb9e0607046170d610c0016403534a3eeb720166b2d690c",
+      "mode": "keep"
+    },
+    "LICENSE.txt": {
+      "size": 1938,
+      "sha256": "ba1b208af71306571839436e827bf4da054240a819dfd8b02ed040d36de92f18",
+      "mode": "file",
+      "payload": "payload/LICENSE.txt",
+      "payload_sha256": "ba1b208af71306571839436e827bf4da054240a819dfd8b02ed040d36de92f18"
+    },
+    "README.txt": {
+      "size": 777,
+      "sha256": "f44dd8851d9e531ebf58c9590276c1ae8eecbaa2d177176afcd0d41a33b0a476",
+      "mode": "file",
+      "payload": "payload/README.txt",
+      "payload_sha256": "f44dd8851d9e531ebf58c9590276c1ae8eecbaa2d177176afcd0d41a33b0a476"
+    },
+    "build-info.json": {
+      "size": 363,
+      "sha256": "a9eedcdc2af6fc2034c5867ee97bbe89b74afa54ebbe4a0c4b53cd413029864e",
+      "mode": "file",
+      "payload": "payload/build-info.json",
+      "payload_sha256": "a9eedcdc2af6fc2034c5867ee97bbe89b74afa54ebbe4a0c4b53cd413029864e"
+    },
+    "credits.html": {
+      "size": 3650,
+      "sha256": "95ea592fb9f65af9ec3ceea652122f2e78ede2cd09d02bf2e7dbb66d2be326a9",
+      "mode": "file",
+      "payload": "payload/credits.html",
+      "payload_sha256": "95ea592fb9f65af9ec3ceea652122f2e78ede2cd09d02bf2e7dbb66d2be326a9"
+    },
+    "frame-pacing.js": {
+      "size": 848,
+      "sha256": "6cca948c379080fc1a56d5644904629c2ec606e2e06f8662ad7aff93ec3f2e1e",
+      "mode": "keep"
+    },
+    "guide.html": {
+      "size": 11048,
+      "sha256": "d1d8c441563ed9f3378effea696c1b50230c400e77d53ef892b6e7bfd56cb886",
+      "mode": "file",
+      "payload": "payload/guide.html",
+      "payload_sha256": "d1d8c441563ed9f3378effea696c1b50230c400e77d53ef892b6e7bfd56cb886"
+    },
+    "index.html": {
+      "size": 5972,
+      "sha256": "db4689d2c7ee2a253ab31fb03ce43464a24c9d4cd3cb807b72edbcf5e44440d3",
+      "mode": "file",
+      "payload": "payload/index.html",
+      "payload_sha256": "db4689d2c7ee2a253ab31fb03ce43464a24c9d4cd3cb807b72edbcf5e44440d3"
+    },
+    "mobile-shell.js": {
+      "size": 1715,
+      "sha256": "a72fbe73c8e037212d6ad9fc8f512274fb1ca64bee885388a5d8c3aef71e97fe",
+      "mode": "file",
+      "payload": "payload/mobile-shell.js",
+      "payload_sha256": "a72fbe73c8e037212d6ad9fc8f512274fb1ca64bee885388a5d8c3aef71e97fe"
+    },
+    "play-v0.0.4.pck": {
+      "size": 19125836,
+      "sha256": "4ab49d935e636c26383d5948e4e42c4e7cba415c298e2c54f27100071145cde9",
+      "mode": "delta",
+      "source": "play.pck",
+      "payload": "payload/play-v0.0.4.pck.delta.json",
+      "payload_sha256": "86153e70338de8f4b97bdfc411a0d6d6588ca1e80f816fa3b67d7f263ffaffec"
+    },
+    "play.apple-touch-icon.png": {
+      "size": 3097,
+      "sha256": "dff8f10f7b72793eb20836e0cd6741557fafcec3fbc992ba77039b0d9fe1d68c",
+      "mode": "keep"
+    },
+    "play.audio.position.worklet.js": {
+      "size": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+      "mode": "keep"
+    },
+    "play.audio.worklet.js": {
+      "size": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+      "mode": "keep"
+    },
+    "play.html": {
+      "size": 5972,
+      "sha256": "db4689d2c7ee2a253ab31fb03ce43464a24c9d4cd3cb807b72edbcf5e44440d3",
+      "mode": "file",
+      "payload": "payload/play.html",
+      "payload_sha256": "db4689d2c7ee2a253ab31fb03ce43464a24c9d4cd3cb807b72edbcf5e44440d3"
+    },
+    "play.icon.png": {
+      "size": 1523,
+      "sha256": "198418a77a91abbf8230649884691d9c9ed213a67521dc29a465afcf8cf0d722",
+      "mode": "keep"
+    },
+    "play.js": {
+      "size": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+      "mode": "keep"
+    },
+    "play.png": {
+      "size": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+      "mode": "keep"
+    },
+    "play.wasm": {
+      "size": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
+      "mode": "keep"
+    },
+    "spec/index.html": {
+      "size": 17101,
+      "sha256": "8bb4ded46a549f1fec44e5ff3126fc0602eaf2a2119746a567886952ede12a02",
+      "mode": "file",
+      "payload": "payload/spec-index.html",
+      "payload_sha256": "8bb4ded46a549f1fec44e5ff3126fc0602eaf2a2119746a567886952ede12a02"
+    }
+  },
+  "baseline_archive": {
+    "name": "SCP-Frontier-Web-0.0.2.zip",
+    "size": 29140721,
+    "sha256": "3108ce06ed68b5d4aca89037ba8d42ee3cbe0bbeee996b16712212a31b22d204"
+  },
+  "export_archive_sha256": "b1d8ccaf3df2573438cb1ad16b0534643180634a3b7086152b977ef04c658c97",
+  "source_commit": "1251db36a76b2a76f3141e81220750d902e2dbf3"
+}

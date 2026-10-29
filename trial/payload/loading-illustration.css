@@ -1,0 +1,38 @@
+/* Compact SCP Frontier wordmark. The engine still owns loading progress/errors. */
+#status {
+  isolation: isolate;
+  gap: clamp(20px, 5vh, 40px);
+  background: radial-gradient(ellipse at 50% 45%, #202c3b 0%, #101826 65%);
+}
+#status-splash, #status-splash.fullsize--true {
+  position: relative;
+  inset: auto;
+  width: min(80vw, 760px);
+  height: auto;
+  max-height: 62vh;
+  max-width: 84vw;
+  object-fit: contain;
+  margin: 0;
+  image-rendering: auto;
+  filter: drop-shadow(0 4px 18px rgba(213, 166, 101, .10));
+}
+#status-progress {
+  position: relative;
+  inset: auto;
+  width: min(42vw, 320px);
+  height: 6px;
+  margin: 0;
+  accent-color: #d5a665;
+}
+#status-notice {
+  position: absolute;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  max-width: min(80vw, 640px);
+  max-height: 30vh;
+  overflow: auto;
+  z-index: 2;
+}
+@media (max-height: 420px) {
+  #status { gap: 14px; }
+  #status-splash, #status-splash.fullsize--true { max-height: 66vh; width: min(72vw, 620px); }
+}

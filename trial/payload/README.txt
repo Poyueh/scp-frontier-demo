@@ -1,14 +1,14 @@
-SCP Frontier v0.0.4 — The Silent Outpost / 林緣失聯前哨
+SCP Frontier — 瀏覽器預覽版
 
-Play: https://poyueh.github.io/scp-frontier-demo/
-Guide: guide.html | Attribution and license: credits.html / LICENSE.txt
+把此資料夾的全部檔案放在同一個網站目錄，再開啟 index.html 的網址。
+本機試玩：在此資料夾執行 python3 -m http.server 8780，開啟 http://localhost:8780。
+請勿使用 file:// 直接雙擊遊戲 HTML；引擎必須下載旁邊的 .wasm 與 .pck。
+guide.html 是可離線閱讀的玩家圖文指南。
+spec/index.html 是本版本的遊戲企劃規格書。
 
-Unzip all files together onto a static website. For local play, serve this folder
-with a local HTTP server, then open index.html through http://localhost.
-Do not double-click play.html through file://.
-Requires WebAssembly and WebGL 2. Desktop keyboard recommended; mobile experimental.
-A/D move; double-tap to sprint; J/click attack; E interact; K pulse; F light; Esc pause.
-Saves stay in this browser and website. Clearing site data deletes progress.
-
-Unofficial SCP derivative game. CC BY-SA 3.0, except third-party components.
-SCP-280 by Dr Gears: https://scp-wiki.wikidot.com/scp-280
+先點一下遊戲畫面，以便瀏覽器啟用聲音與鍵盤。
+A/D 移動；同方向雙按並按住衝刺；J／滑鼠左鍵連斬；E 互動／遠處丟晶；K 技能；Esc 暫停。
+暫停選單可調整音量與手動存讀檔；書本圖示會在遊戲內開啟玩家圖文指南。
+閱讀時遊戲保持暫停，按 × 或 Esc 關閉指南，再按播放繼續。
+存檔保存在此網址對應的瀏覽器資料，與桌面版分開；清除網站資料會移除進度。
+需要支援 WebGL 2 與 WebAssembly 的瀏覽器，首次載入需下載遊戲資源。

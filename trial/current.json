@@ -1,161 +1,276 @@
 {
   "format": 1,
-  "version": "0.0.4",
-  "baseline_tag": "v0.0.2",
+  "version": "0.0.5",
+  "baseline_tag": "v0.0.85",
+  "baseline_repository": "Poyueh/cyber-kingdom-demo",
   "baseline_files": {
-    "CC-BY-SA-3.0.txt": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f",
-    "FONT-LICENSES.txt": "b89257ee131529bba3dd1f1e0139f1e931d6fbffb629e086b9d7394bfa59373a",
-    "GODOT-NOTICES.txt": "3ffe1d3b19a3e2bcdeb9e0607046170d610c0016403534a3eeb720166b2d690c",
-    "LICENSE.txt": "5dd5ec3cebefeba2131d208bc8a8e6bc97d5c8c9bdf24de5d8e0de1d006b109e",
-    "README.txt": "135daf1b5d49d9a70e69b6cd64349d210197c425b6432d84ed129fe0aad89d41",
-    "build-info.json": "3bea5d3c989d076accce3d76784942fb430034142334e5c18d259afeabbb9a4d",
-    "credits.html": "e700284cbbcd4f6b21db2514604ca3dd23d2c6b9d5e52a06deac327aa42f2e59",
+    "FONT-LICENSE.txt": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
+    "README.txt": "8dc472cef657ad769b6b422869a83b6f4b4474557ac1f9d0516b05374b1a9d6d",
     "frame-pacing.js": "6cca948c379080fc1a56d5644904629c2ec606e2e06f8662ad7aff93ec3f2e1e",
-    "guide.html": "8a0c66e63927e4bfd736cf924980d44237c5b4c6f0b5f727ae10b4ccfa793a69",
-    "index.html": "e98fb8516aa49109e86c8b664f8fc113311c3f2f251108448af358166c3f4694",
-    "play.apple-touch-icon.png": "dff8f10f7b72793eb20836e0cd6741557fafcec3fbc992ba77039b0d9fe1d68c",
-    "play.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
-    "play.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
-    "play.html": "073f1752651a0f83fe7eb1e6a15f731612f408fa7229f0c6934c2110b5af9f11",
-    "play.icon.png": "198418a77a91abbf8230649884691d9c9ed213a67521dc29a465afcf8cf0d722",
-    "play.js": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
-    "play.pck": "1e90c11847f3a9f190b7460e27c17e9efd28cab83634d81ca7111f6415304ead",
-    "play.png": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
-    "play.wasm": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    "fullscreen.js": "d09585acd74c5a0d598dcf9773d701185fad7e84b9d372ca581db07ad87ade32",
+    "guide-reader.css": "ef1b454dda28e6ddc8752566f1db78b5f305859365dad63f8c427d0f886d0056",
+    "guide-reader.js": "8d621053cf1659a1fa51252bb12733962fccadcf26d83de24953b8ed9c1699be",
+    "guide.html": "005ccfb77e82cf68fef2eb44da9f1e18b5b47130a1a09763e842acfbecefa63a",
+    "index.apple-touch-icon.png": "e897c283312c594efcc72737fd3652971a914651b0c1980b61998155d1e16afb",
+    "index.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "index.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "index.html": "f954b3a3be3e3fe21704bf68ed1f20505d15309ccba4d60e755e65018836001c",
+    "index.icon.png": "156c0c98a2f251765922f2835f8c386239914f05f7e57b25f49c77727c292618",
+    "index.js": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+    "index.pck": "3e25e40fe819d7d6fdd307b6dda79e23bfcfe0cc8c58cf71dcf37192668a88e3",
+    "index.png": "73267fe9e3f9c45de24cc1085dbf9854285c87995234f9119e4f065d25de7f74",
+    "index.wasm": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
+    "loading-illustration.css": "bd69db7db2cfef080ed27e5653e963b0ae7e92e17f21029d6bf23dda735cf5ee",
+    "orientation.css": "804cf01b26b54d07555998aaa401973ab487718c09a82e6f88bcea13af5e0baa",
+    "orientation.js": "fd72fabc4cca096d00b1e5125442c7fc34621ec3f49da3de9369ce83642e9523",
+    "phone-display.js": "d7a4c88afedaa4d3f04138309a91ad2ddae059c11a99a1db10316667c174460f",
+    "social/forest-companion-v59.png": "5f346e975fc33385c8c527d8df9cdc130dbf402f05c914c72bfb331f50e0a615",
+    "spec/assets/26559190e8-attendant-work.webp": "26559190e8feb73f2a2c74a1325120c459b1adb7ed7e4bd72aa7381286f2f3ea",
+    "spec/assets/30d8c59ac7-dragon-counterattack.webp": "30d8c59ac76bdd08d82ac67e3fd46b4b4afa487053fcb44425982a54f1ab537a",
+    "spec/assets/628eb68e7c-mysterious-menu.png": "628eb68e7c4cb68d7d7efff875a1132bb7ba984bfec4538aa73de3a454493410",
+    "spec/assets/6fb0311681-planet-levels.webp": "6fb03116815310292109c85fe5dcaf38e3e229cfe46fbbe1a9c47688716dd2cd",
+    "spec/assets/9dbca9b182-cinematic-dragon.png": "9dbca9b182ae166f1270165e9850c67bf410bf60d67e9174fa7698a4cc8bd23d",
+    "spec/assets/ade86e08e4-early-exploration.webp": "ade86e08e490493610fa615f0614f43d0128585f6c086cd85b2b72b371df64a4",
+    "spec/assets/b05e076d18-gait.webp": "b05e076d182978912191fd920e97c92f0ef10ccaa777cb97be57df1b5a88b20a",
+    "spec/assets/b85bb967aa-motorcycle-expedition.png": "b85bb967aa1f3a58d954a33fc35eb6b5688759cf453e625706b843d6b754f6a9",
+    "spec/assets/d4f1036c94-settlement-inhabitants.webp": "d4f1036c945064f097e18c5d8f8db4f10f846a5aeed4520260ab3223cb6c2aca",
+    "spec/assets/d5df6b3c90-devourers.webp": "d5df6b3c90806ec5425ef10dd966b76a28e5fbcca5d4c21b5565f793bd6ef4cf",
+    "spec/assets/d84847ebc0-combo.webp": "d84847ebc04f51b58f067ebf04213dbfc6fb22da2d66c3e2f02bbccd573e65b1",
+    "spec/assets/da0b1cfc0a-star-chart.webp": "da0b1cfc0ae6d0ca0b6cc3f056f5b01d3c0a08ce773694ae8b2bd1bed05002e6",
+    "spec/index.html": "6287e879f1fb478a87f0aa8c8d05739dad752f070786f9dd08c0ff1cfa3284c3",
+    "spec/manifest.json": "518a443750de29861a6797f54c100ae192689b89be68f0cba3ede9409f397118",
+    "spec/reader.js": "6cc33a6ae719d50267acced5b925c88847b45550adfa92b61b9200a10fec7a4d",
+    "spec/style.css": "4ab246c449276ab11259ef4615bc86f4a3f136408fd74579ca5ce73e9f690172",
+    "touch-guard.css": "4521dadc9ae7fa48b7220e1062a7c546a3736ee92b58f9b7a54e8426f6d308d8",
+    "touch-guard.js": "dc541ee252d0382ede2dff3d2ae1c5da503bf9ce80c428689052fd8a9f92979e"
   },
   "files": {
     "CC-BY-SA-3.0.txt": {
       "size": 22240,
       "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f",
+      "mode": "file",
+      "payload": "payload/CC-BY-SA-3.0.txt",
+      "payload_sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+    },
+    "DEJAVU-LICENSE.txt": {
+      "size": 3859,
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
+      "mode": "file",
+      "payload": "payload/DEJAVU-LICENSE.txt",
+      "payload_sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    "FONT-LICENSE.txt": {
+      "size": 4301,
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
       "mode": "keep"
     },
     "FONT-LICENSES.txt": {
-      "size": 8646,
-      "sha256": "b89257ee131529bba3dd1f1e0139f1e931d6fbffb629e086b9d7394bfa59373a",
-      "mode": "keep"
+      "size": 12537,
+      "sha256": "c562cfc32839659e744154c5432d38af232dc5f79e2d639aa6df8b172fae17c0",
+      "mode": "file",
+      "payload": "payload/FONT-LICENSES.txt",
+      "payload_sha256": "c562cfc32839659e744154c5432d38af232dc5f79e2d639aa6df8b172fae17c0"
     },
     "GODOT-NOTICES.txt": {
       "size": 98267,
       "sha256": "3ffe1d3b19a3e2bcdeb9e0607046170d610c0016403534a3eeb720166b2d690c",
-      "mode": "keep"
+      "mode": "file",
+      "payload": "payload/GODOT-NOTICES.txt",
+      "payload_sha256": "3ffe1d3b19a3e2bcdeb9e0607046170d610c0016403534a3eeb720166b2d690c"
     },
     "LICENSE.txt": {
-      "size": 1938,
-      "sha256": "ba1b208af71306571839436e827bf4da054240a819dfd8b02ed040d36de92f18",
+      "size": 2011,
+      "sha256": "ebd49813ff723efd83651bd08ce44e96536a492af79e494c8e03a64f3748406a",
       "mode": "file",
       "payload": "payload/LICENSE.txt",
-      "payload_sha256": "ba1b208af71306571839436e827bf4da054240a819dfd8b02ed040d36de92f18"
+      "payload_sha256": "ebd49813ff723efd83651bd08ce44e96536a492af79e494c8e03a64f3748406a"
     },
     "README.txt": {
-      "size": 777,
-      "sha256": "f44dd8851d9e531ebf58c9590276c1ae8eecbaa2d177176afcd0d41a33b0a476",
+      "size": 1006,
+      "sha256": "d9a5603fb439246780eb9854df7f9cf538ab182c2ac837437df553b716689e4c",
       "mode": "file",
       "payload": "payload/README.txt",
-      "payload_sha256": "f44dd8851d9e531ebf58c9590276c1ae8eecbaa2d177176afcd0d41a33b0a476"
-    },
-    "build-info.json": {
-      "size": 363,
-      "sha256": "a9eedcdc2af6fc2034c5867ee97bbe89b74afa54ebbe4a0c4b53cd413029864e",
-      "mode": "file",
-      "payload": "payload/build-info.json",
-      "payload_sha256": "a9eedcdc2af6fc2034c5867ee97bbe89b74afa54ebbe4a0c4b53cd413029864e"
+      "payload_sha256": "d9a5603fb439246780eb9854df7f9cf538ab182c2ac837437df553b716689e4c"
     },
     "credits.html": {
-      "size": 3650,
-      "sha256": "95ea592fb9f65af9ec3ceea652122f2e78ede2cd09d02bf2e7dbb66d2be326a9",
+      "size": 2486,
+      "sha256": "4d2792b235869bf7bb8867d7d8e501166f78c8c4c9a5909ac3f08d2e04e16964",
       "mode": "file",
       "payload": "payload/credits.html",
-      "payload_sha256": "95ea592fb9f65af9ec3ceea652122f2e78ede2cd09d02bf2e7dbb66d2be326a9"
+      "payload_sha256": "4d2792b235869bf7bb8867d7d8e501166f78c8c4c9a5909ac3f08d2e04e16964"
     },
     "frame-pacing.js": {
       "size": 848,
       "sha256": "6cca948c379080fc1a56d5644904629c2ec606e2e06f8662ad7aff93ec3f2e1e",
       "mode": "keep"
     },
-    "guide.html": {
-      "size": 11048,
-      "sha256": "d1d8c441563ed9f3378effea696c1b50230c400e77d53ef892b6e7bfd56cb886",
-      "mode": "file",
-      "payload": "payload/guide.html",
-      "payload_sha256": "d1d8c441563ed9f3378effea696c1b50230c400e77d53ef892b6e7bfd56cb886"
-    },
-    "index.html": {
-      "size": 5972,
-      "sha256": "db4689d2c7ee2a253ab31fb03ce43464a24c9d4cd3cb807b72edbcf5e44440d3",
-      "mode": "file",
-      "payload": "payload/index.html",
-      "payload_sha256": "db4689d2c7ee2a253ab31fb03ce43464a24c9d4cd3cb807b72edbcf5e44440d3"
-    },
-    "mobile-shell.js": {
-      "size": 1715,
-      "sha256": "a72fbe73c8e037212d6ad9fc8f512274fb1ca64bee885388a5d8c3aef71e97fe",
-      "mode": "file",
-      "payload": "payload/mobile-shell.js",
-      "payload_sha256": "a72fbe73c8e037212d6ad9fc8f512274fb1ca64bee885388a5d8c3aef71e97fe"
-    },
-    "play-v0.0.4.pck": {
-      "size": 19125836,
-      "sha256": "4ab49d935e636c26383d5948e4e42c4e7cba415c298e2c54f27100071145cde9",
-      "mode": "delta",
-      "source": "play.pck",
-      "payload": "payload/play-v0.0.4.pck.delta.json",
-      "payload_sha256": "86153e70338de8f4b97bdfc411a0d6d6588ca1e80f816fa3b67d7f263ffaffec"
-    },
-    "play.apple-touch-icon.png": {
-      "size": 3097,
-      "sha256": "dff8f10f7b72793eb20836e0cd6741557fafcec3fbc992ba77039b0d9fe1d68c",
+    "fullscreen.js": {
+      "size": 1000,
+      "sha256": "d09585acd74c5a0d598dcf9773d701185fad7e84b9d372ca581db07ad87ade32",
       "mode": "keep"
     },
-    "play.audio.position.worklet.js": {
+    "guide-reader.css": {
+      "size": 1750,
+      "sha256": "ef1b454dda28e6ddc8752566f1db78b5f305859365dad63f8c427d0f886d0056",
+      "mode": "keep"
+    },
+    "guide-reader.js": {
+      "size": 2968,
+      "sha256": "120e10c1f9922f569cf5904b93ec217ff9341b867a1118c41240266dffa8e6f5",
+      "mode": "file",
+      "payload": "payload/guide-reader.js",
+      "payload_sha256": "120e10c1f9922f569cf5904b93ec217ff9341b867a1118c41240266dffa8e6f5"
+    },
+    "guide.html": {
+      "size": 9476,
+      "sha256": "74d846860d00d0e3edaf63930ca7e9b5bbe4c0a2a0a05d10a95f2429b573a6d3",
+      "mode": "file",
+      "payload": "payload/guide.html",
+      "payload_sha256": "74d846860d00d0e3edaf63930ca7e9b5bbe4c0a2a0a05d10a95f2429b573a6d3"
+    },
+    "index-v0.0.5.pck": {
+      "size": 79744872,
+      "sha256": "ab3c5f0ae8dabf68efc109295ce180ee3e5cf029d09bf2780b87d05fdd9c8359",
+      "mode": "delta",
+      "source": "index.pck",
+      "payloads": [
+        {
+          "path": "payload/index-v0.0.5.pck.delta.json.part000",
+          "sha256": "e7ed25270bd25949a61ba124163b6643fb977fca2ccbdda802c590f5994bcadd"
+        },
+        {
+          "path": "payload/index-v0.0.5.pck.delta.json.part001",
+          "sha256": "8381a5d4e1c2f964245b7996b42d60f16e1f1367693526c9cee22bd30026cd6d"
+        },
+        {
+          "path": "payload/index-v0.0.5.pck.delta.json.part002",
+          "sha256": "3c6e5be012b42e4251a05f7da385ebacedab112f0acae4ea9ee58001ab1b5862"
+        },
+        {
+          "path": "payload/index-v0.0.5.pck.delta.json.part003",
+          "sha256": "3318b9c0ca139eeea743028896705b6abee37b50747ba2036468b5bc560a75c6"
+        }
+      ]
+    },
+    "index.apple-touch-icon.png": {
+      "size": 8574,
+      "sha256": "8b27baa71165048c2755ac552c56747af770c0c404a33c2de5894a3ee8c99818",
+      "mode": "file",
+      "payload": "payload/index.apple-touch-icon.png",
+      "payload_sha256": "8b27baa71165048c2755ac552c56747af770c0c404a33c2de5894a3ee8c99818"
+    },
+    "index.audio.position.worklet.js": {
       "size": 2973,
       "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
       "mode": "keep"
     },
-    "play.audio.worklet.js": {
+    "index.audio.worklet.js": {
       "size": 7298,
       "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
       "mode": "keep"
     },
-    "play.html": {
-      "size": 5972,
-      "sha256": "db4689d2c7ee2a253ab31fb03ce43464a24c9d4cd3cb807b72edbcf5e44440d3",
+    "index.html": {
+      "size": 7754,
+      "sha256": "8d6e19094ae0c6099d70e7dc7ad065c8d0d96ae04ca279544c64a955f93c0281",
       "mode": "file",
-      "payload": "payload/play.html",
-      "payload_sha256": "db4689d2c7ee2a253ab31fb03ce43464a24c9d4cd3cb807b72edbcf5e44440d3"
+      "payload": "payload/index.html",
+      "payload_sha256": "8d6e19094ae0c6099d70e7dc7ad065c8d0d96ae04ca279544c64a955f93c0281"
     },
-    "play.icon.png": {
-      "size": 1523,
-      "sha256": "198418a77a91abbf8230649884691d9c9ed213a67521dc29a465afcf8cf0d722",
-      "mode": "keep"
+    "index.icon.png": {
+      "size": 5616,
+      "sha256": "de594d7f200721789d3d43c5bbeb633fbd8ca8cb11bc0bab69b88e361582470e",
+      "mode": "file",
+      "payload": "payload/index.icon.png",
+      "payload_sha256": "de594d7f200721789d3d43c5bbeb633fbd8ca8cb11bc0bab69b88e361582470e"
     },
-    "play.js": {
+    "index.js": {
       "size": 279815,
       "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
       "mode": "keep"
     },
-    "play.png": {
-      "size": 21443,
-      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
-      "mode": "keep"
+    "index.png": {
+      "size": 24561,
+      "sha256": "1d6f02efc53ad765123b93c78956d21e1a875d48cc4f1608c2ef4967a06242b8",
+      "mode": "file",
+      "payload": "payload/index.png",
+      "payload_sha256": "1d6f02efc53ad765123b93c78956d21e1a875d48cc4f1608c2ef4967a06242b8"
     },
-    "play.wasm": {
+    "index.wasm": {
       "size": 39514754,
       "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
       "mode": "keep"
     },
+    "loading-illustration.css": {
+      "size": 978,
+      "sha256": "2640082ea303c7cc6923136e73a52d7211ba85aaa14ffb9af1071dff082c1d62",
+      "mode": "file",
+      "payload": "payload/loading-illustration.css",
+      "payload_sha256": "2640082ea303c7cc6923136e73a52d7211ba85aaa14ffb9af1071dff082c1d62"
+    },
+    "orientation.css": {
+      "size": 2044,
+      "sha256": "804cf01b26b54d07555998aaa401973ab487718c09a82e6f88bcea13af5e0baa",
+      "mode": "keep"
+    },
+    "orientation.js": {
+      "size": 3523,
+      "sha256": "fd72fabc4cca096d00b1e5125442c7fc34621ec3f49da3de9369ce83642e9523",
+      "mode": "keep"
+    },
+    "phone-display.js": {
+      "size": 529,
+      "sha256": "d7a4c88afedaa4d3f04138309a91ad2ddae059c11a99a1db10316667c174460f",
+      "mode": "keep"
+    },
+    "social/scp-frontier-brand.png": {
+      "size": 27799,
+      "sha256": "aecb68975af10e993670b8793ec615643db0d8c100594f5077cc4054455a9952",
+      "mode": "file",
+      "payload": "payload/social-scp-frontier-brand.png",
+      "payload_sha256": "aecb68975af10e993670b8793ec615643db0d8c100594f5077cc4054455a9952"
+    },
     "spec/index.html": {
-      "size": 17101,
-      "sha256": "8bb4ded46a549f1fec44e5ff3126fc0602eaf2a2119746a567886952ede12a02",
+      "size": 31281,
+      "sha256": "e14a5011cf7dce698f74d1a24e15728103cae319ddc4c1a0a7395b95763f15e9",
       "mode": "file",
       "payload": "payload/spec-index.html",
-      "payload_sha256": "8bb4ded46a549f1fec44e5ff3126fc0602eaf2a2119746a567886952ede12a02"
+      "payload_sha256": "e14a5011cf7dce698f74d1a24e15728103cae319ddc4c1a0a7395b95763f15e9"
+    },
+    "spec/manifest.json": {
+      "size": 452,
+      "sha256": "3695fd57f75f723397bc405f65499590d8adf11cb0a812fd00c3fcbf32a0f064",
+      "mode": "file",
+      "payload": "payload/spec-manifest.json",
+      "payload_sha256": "3695fd57f75f723397bc405f65499590d8adf11cb0a812fd00c3fcbf32a0f064"
+    },
+    "spec/reader.js": {
+      "size": 2706,
+      "sha256": "6cc33a6ae719d50267acced5b925c88847b45550adfa92b61b9200a10fec7a4d",
+      "mode": "keep"
+    },
+    "spec/style.css": {
+      "size": 11078,
+      "sha256": "db898ef6d830f3adb0dd712ae7f57c6148a9ed2d2a5a002dd0a0b26ad89d30ef",
+      "mode": "file",
+      "payload": "payload/spec-style.css",
+      "payload_sha256": "db898ef6d830f3adb0dd712ae7f57c6148a9ed2d2a5a002dd0a0b26ad89d30ef"
+    },
+    "touch-guard.css": {
+      "size": 268,
+      "sha256": "4521dadc9ae7fa48b7220e1062a7c546a3736ee92b58f9b7a54e8426f6d308d8",
+      "mode": "keep"
+    },
+    "touch-guard.js": {
+      "size": 515,
+      "sha256": "dc541ee252d0382ede2dff3d2ae1c5da503bf9ce80c428689052fd8a9f92979e",
+      "mode": "keep"
     }
   },
   "baseline_archive": {
-    "name": "SCP-Frontier-Web-0.0.2.zip",
-    "size": 29140721,
-    "sha256": "3108ce06ed68b5d4aca89037ba8d42ee3cbe0bbeee996b16712212a31b22d204"
+    "name": "Cyber-Kingdom-Demo-Web-v0.0.85.zip",
+    "size": 93308072,
+    "sha256": "bf8dfb8cfef06bd9e12ff97b119c871b678f13245c21c8bd19d5eb4e442b550e"
   },
-  "export_archive_sha256": "b1d8ccaf3df2573438cb1ad16b0534643180634a3b7086152b977ef04c658c97",
-  "source_commit": "1251db36a76b2a76f3141e81220750d902e2dbf3"
+  "export_archive_sha256": "9635b8e1e492ffd2fcc0fed67edd24a5f6cb957b12c66d401787ed10572bf4d3",
+  "source_commit": "71f1617c6f1498af48f9a1c278c3973b430f9fde"
 }
