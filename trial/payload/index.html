@@ -1,1 +1,222 @@
-<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><link rel="icon" href="play.icon.png" type="image/png"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d1c24"><title>SCP Frontier · 林緣失聯前哨</title><style>:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#0d1c24;color:#d4ddc8}*{box-sizing:border-box}body{margin:0}main{max-width:980px;margin:auto;padding:64px 28px}h1{font-size:clamp(32px,7vw,60px);letter-spacing:.08em;margin:12px 0}h2{color:#b5d2c7;margin-top:36px}p,li{line-height:1.8;color:#a8beb6}a{color:#b5d9c8;text-underline-offset:5px}nav{display:flex;gap:20px;flex-wrap:wrap;margin:24px 0}button,select{font:inherit;color:#d4ddc8;background:#1c3c43;border:1px solid #678b81;border-radius:3px;padding:13px 22px;cursor:pointer}button:hover{background:#2d5258}.eyebrow{font-size:12px;letter-spacing:.16em;color:#7fb3a8}.note{font-size:14px;border-left:2px solid #6e8370;padding-left:16px}table{border-collapse:collapse;width:100%;line-height:1.7}td,th{text-align:left;border-bottom:1px solid #29414a;padding:12px}footer{font-size:12px;margin-top:50px;line-height:1.8;color:#839c92}#game{display:none;width:100%;height:calc(100dvh - 52px);border:0;background:#080f16}body.playing main{display:none}body.playing #game{display:block}#toolbar{display:none;height:52px;padding:8px 16px;align-items:center;gap:22px}body.playing #toolbar{display:flex}#toolbar a{font-size:13px}article[hidden]{display:none}</style><main><div class="eyebrow">SCP FRONTIER / v0.0.3 / PLAYABLE PROTOTYPE</div><h1>林緣失聯前哨</h1><p>你是重建指揮官。讓前哨重新供能，安排工程師，再沿失聯訊號深入維修廊道。</p><p>這次出勤的成果，是讓一處隔離區重新安全。</p><nav><button id="start">開始試玩 · Play</button><a href="guide.html">操作指南 / Guide</a><a href="credits.html">來源與授權 / Credits</a><a href="https://github.com/Poyueh/scp-frontier-demo/releases">歷史下載與版本紀錄</a></nav><p class="note">首區原型，含繁體中文、简体中文與 English。建議先用電腦鍵盤遊玩；角色、異常實體、物件與介面已統一工業風格；手機效能與完整實機畫面仍待驗證。<br>Desktop keyboard recommended. Mobile support is experimental.</p><p>A / D 移動 · J 攻擊 · E 互動 · K 脈衝 · F 照明 · Esc 暫停<br>首次載入會需要一點時間；請保持頁面開啟。</p><footer>SCP Frontier © 2026 Poyueh · <a href="credits.html">CC BY-SA 3.0 / Credits</a><br>Based on <a href="https://scp-wiki.wikidot.com/scp-280">SCP-280 by Dr Gears</a> and the SCP Wiki. Unofficial fan game.</footer></main><div id="toolbar"><a href="index.html">SCP FRONTIER · v0.0.3</a><a href="guide.html" target="_blank" rel="noopener">指南 / Guide</a><a href="credits.html" target="_blank" rel="noopener">授權 / Credits</a></div><iframe id="game" title="SCP Frontier first-slice prototype" allow="autoplay; fullscreen"></iframe><script>document.getElementById('start').addEventListener('click',()=>{document.body.classList.add('playing');const game=document.getElementById('game');game.src='play.html?v=0.0.3';game.focus();});</script></html>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+		<title>SCP Frontier — 林緣失聯前哨</title>
+		<style>
+html, body, #canvas {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	color: white;
+	background-color: black;
+	overflow: hidden;
+	touch-action: none;
+}
+
+#canvas {
+	display: block;
+}
+
+#canvas:focus {
+	outline: none;
+}
+
+#status, #status-splash, #status-progress {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+#status, #status-splash {
+	top: 0;
+	bottom: 0;
+}
+
+#status {
+	background-color: #242424;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+}
+
+#status-splash {
+	max-height: 100%;
+	max-width: 100%;
+	margin: auto;
+}
+
+#status-splash.show-image--false {
+	display: none;
+}
+
+#status-splash.fullsize--true {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+
+#status-splash.use-filter--false {
+	image-rendering: pixelated;
+}
+
+#status-progress, #status-notice {
+	display: none;
+}
+
+#status-progress {
+	bottom: 10%;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#status-notice {
+	background-color: #5b3943;
+	border-radius: 0.5rem;
+	border: 1px solid #9b3943;
+	color: #e0e0e0;
+	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+	line-height: 1.3;
+	margin: 0 2rem;
+	overflow: hidden;
+	padding: 1rem;
+	text-align: center;
+	z-index: 1;
+}
+		
+body{overscroll-behavior:none;background:#101b24} #status{background:#101b24} #status-brand{font:600 22px system-ui;letter-spacing:.12em;color:#d6d5c6;text-align:center} #status-brand small{display:block;margin-top:18px;font:14px system-ui;letter-spacing:0;color:#dda864}
+</style>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="play.icon.png" />
+<link rel="apple-touch-icon" href="play.apple-touch-icon.png"/>
+<script src="frame-pacing.js"></script>
+	<script src="mobile-shell.js?v=0.0.4"></script></head>
+	<body>
+		<canvas id="canvas">
+			Your browser does not support the canvas tag.
+		</canvas>
+
+		<noscript>
+			Your browser does not support JavaScript.
+		</noscript>
+
+		<div id="status"><div id="status-brand">SCP FRONTIER<small id="loading-label">正在載入 · Loading…</small></div>
+			<img id="status-splash" class="show-image--false fullsize--true use-filter--true" src="play.png" alt="">
+			<progress id="status-progress"></progress>
+			<div id="status-notice"></div>
+		</div>
+
+		<script src="play.js?v=0.0.4"></script>
+		<script>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"play","experimentalVK":false,"fileSizes":{"play.wasm":39514754,"play-v0.0.4.pck":19125836},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"mainPack":"play-v0.0.4.pck"};
+const GODOT_THREADS_ENABLED = false;
+const engine = new Engine(GODOT_CONFIG);
+
+(function () {
+	const statusOverlay = document.getElementById('status');
+	const statusProgress = document.getElementById('status-progress');
+	const statusNotice = document.getElementById('status-notice');
+
+	let initializing = true;
+	let statusMode = '';
+
+	function setStatusMode(mode) {
+		if (statusMode === mode || !initializing) {
+			return;
+		}
+		if (mode === 'hidden') {
+			statusOverlay.remove();
+			initializing = false;
+			return;
+		}
+		statusOverlay.style.visibility = 'visible';
+		statusProgress.style.display = mode === 'progress' ? 'block' : 'none';
+		statusNotice.style.display = mode === 'notice' ? 'block' : 'none';
+		statusMode = mode;
+	}
+
+	function setStatusNotice(text) {
+		while (statusNotice.lastChild) {
+			statusNotice.removeChild(statusNotice.lastChild);
+		}
+		const lines = text.split('\n');
+		lines.forEach((line) => {
+			statusNotice.appendChild(document.createTextNode(line));
+			statusNotice.appendChild(document.createElement('br'));
+		});
+	}
+
+	function displayFailureNotice(err) {
+		console.error(err);
+		if (err instanceof Error) {
+			setStatusNotice(err.message);
+		} else if (typeof err === 'string') {
+			setStatusNotice(err);
+		} else {
+			setStatusNotice('An unknown error occurred.');
+		}
+		setStatusMode('notice');
+		initializing = false;
+	}
+
+	const missing = Engine.getMissingFeatures({
+		threads: GODOT_THREADS_ENABLED,
+	});
+
+	if (missing.length !== 0) {
+		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorker' in navigator) {
+			let serviceWorkerRegistrationPromise;
+			try {
+				serviceWorkerRegistrationPromise = navigator.serviceWorker.getRegistration();
+			} catch (err) {
+				serviceWorkerRegistrationPromise = Promise.reject(new Error('Service worker registration failed.'));
+			}
+			// There's a chance that installing the service worker would fix the issue
+			Promise.race([
+				serviceWorkerRegistrationPromise.then((registration) => {
+					if (registration != null) {
+						return Promise.reject(new Error('Service worker already exists.'));
+					}
+					return registration;
+				}).then(() => engine.installServiceWorker()),
+				// For some reason, `getRegistration()` can stall
+				new Promise((resolve) => {
+					setTimeout(() => resolve(), 2000);
+				}),
+			]).then(() => {
+				// Reload if there was no error.
+				window.location.reload();
+			}).catch((err) => {
+				console.error('Error while registering service worker:', err);
+			});
+		} else {
+			// Display the message as usual
+			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
+			displayFailureNotice(missingMsg + missing.join('\n'));
+		}
+	} else {
+		setStatusMode('progress');
+		engine.startGame({
+			'onProgress': function (current, total) {
+				if (current > 0 && total > 0) {
+					statusProgress.value = current;
+					statusProgress.max = total;
+				} else {
+					statusProgress.removeAttribute('value');
+					statusProgress.removeAttribute('max');
+				}
+			},
+		}).then(() => {
+			setStatusMode('hidden');
+		}, displayFailureNotice);
+	}
+}());
+		</script>
+	</body>
+</html>
+

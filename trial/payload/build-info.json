@@ -1,10 +1,10 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.4",
   "edition": "first-slice-prototype",
   "engine": "Godot 4.7.2",
-  "main_pack": "play-v0.0.3.pck",
+  "main_pack": "play-v0.0.4.pck",
   "threads": false,
   "game_license": "CC-BY-SA-3.0",
-  "shared_input_sha256": "4444a59f9788c14bd378b47da97cbc8f472e2e99352f507284b4eda3166353dc",
-  "theme_input_sha256": "251c769c41450eaf1bb074a89412b89aabe6891b517dd209b7f242fcd01fe836"
+  "shared_input_sha256": "d43b84e20a855aed183eb24f1b336855d2295df6d27b21275d7cfd44dad96e2a",
+  "theme_input_sha256": "d415c172895d09b62c01c956e51dbab6a57cab8d7a1fc8501250e99a099a3622"
 }

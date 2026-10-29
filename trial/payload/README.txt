@@ -1,4 +1,4 @@
-SCP Frontier v0.0.3 — The Silent Outpost / 林緣失聯前哨
+SCP Frontier v0.0.4 — The Silent Outpost / 林緣失聯前哨
 
 Play: https://poyueh.github.io/scp-frontier-demo/
 Guide: guide.html | Attribution and license: credits.html / LICENSE.txt

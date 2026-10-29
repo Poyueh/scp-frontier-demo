@@ -1,10 +1,10 @@
 # SCP Frontier — 林緣失聯前哨
 
-[開始試玩](https://poyueh.github.io/scp-frontier-demo/) · [操作指南](https://poyueh.github.io/scp-frontier-demo/guide.html) · [v0.0.2 下載與紀錄](https://github.com/Poyueh/scp-frontier-demo/releases/tag/v0.0.2)
+[開始試玩](https://poyueh.github.io/scp-frontier-demo/) · [公開企劃書](https://poyueh.github.io/scp-frontier-demo/spec/) · [操作指南](https://poyueh.github.io/scp-frontier-demo/guide.html) · [v0.0.2 下載與紀錄](https://github.com/Poyueh/scp-frontier-demo/releases/tag/v0.0.2)
 
 你是重建指揮官。啟動前哨、安排工程師、沿訊號探索廊道，取回脈衝裝置，再觀察並重新隔離 SCP-280。
 
-v0.0.3 是視覺一致性驗測版，含繁體中文、简体中文與 English；統一角色、SCP-280、物件、互動提示與 UI 的像素視覺規範。建議電腦鍵盤遊玩；手機觸控、效能與新玩家盲測仍需驗證。
+v0.0.4 是主選單／首關流程與手機操作驗測版，含繁體中文、简体中文與 English；直接開啟遊戲載入及主選單，不經過介紹頁。角色、SCP-280、物件與 UI 維持統一像素視覺，並提供手機觸控操作；手機實機效能與新玩家盲測仍需驗證。
 
 A／D 移動，同向雙按並按住衝刺；J／左鍵攻擊；E 互動與投入物資；K 脈衝；F 定向照明；Esc 暫停。進度儲存在目前瀏覽器和網站；清除網站資料會刪除紀錄。
 
@@ -20,6 +20,8 @@ Release 提供完整 Web ZIP 與 SHA-256 校驗碼。解壓後需透過網站或
 
 ## 驗測版部署
 
-v0.0.3 線上驗測版以 `trial/current.json` 固定全部公開執行檔的 SHA-256 與大小；以已發佈的 v0.0.2 成品為基底，重建後必須逐檔符合完整匯出成品，否則停止部署。這是成品傳輸格式，不是在部署時修改遊戲原始碼。舊 Release ZIP 保留供下載；線上驗測版不代表已新增同版 Release ZIP。
+v0.0.4 線上驗測版以 `trial/current.json` 固定全部公開執行檔的 SHA-256 與大小；以已發佈的 v0.0.2 成品為基底，重建後必須逐檔符合完整匯出成品，否則停止部署。這是成品傳輸格式，不是在部署時修改遊戲原始碼。舊 Release ZIP 保留供下載；線上驗測版不代表已新增同版 Release ZIP。
 
 部署仍僅使用既有的唯讀 contents 與 Pages 發佈權限。手動選擇舊 Release 的部署路徑維持不變；推送新的驗測版 manifest 才會觸發驗測成品部署。
+
+公開企劃書位於 `/spec/`，隨遊戲版本產生並檢查同步；只含玩家可讀設計內容，不包含私有來源、內部歷程或驗測紀錄。

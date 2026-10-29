@@ -1,4 +1,4 @@
-SCP Frontier — The Silent Outpost, v0.0.3
+SCP Frontier — The Silent Outpost, v0.0.4
 Copyright 2026 Poyueh. An unofficial SCP Foundation derivative game.
 
 This distributed SCP Frontier game, including the Poyueh-authored game content,

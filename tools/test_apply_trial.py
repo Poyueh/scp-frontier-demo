@@ -34,7 +34,7 @@ class DeltaTests(unittest.TestCase):
         self.patch['operations']=[{'execute':'echo nope'}]
         with self.assertRaises(ValueError):reconstruct(self.source,self.patch)
     def test_unsafe_names(self):
-        for name in ['../x.png','/x.png','x/y.png','.git','code.py','a\\b.png']:
+        for name in ['../x.png','/x.png','x/y.png','.git','code.py','a\\b.png','spec/../index.html','spec/other.html','spec//index.html','/spec/index.html','spec/index.html/']:
             self.assertFalse(name_ok(name),name)
     def test_atomic_missing_payload(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -45,6 +45,8 @@ class DeltaTests(unittest.TestCase):
             with self.assertRaises(FileNotFoundError):apply_trial(site,request)
             self.assertEqual((site/'keep.txt').read_bytes(),b'unchanged')
             self.assertEqual(list(root.glob('.trial-*')),[])
+    def test_public_spec_path(self):
+        self.assertTrue(name_ok('spec/index.html'))
     def test_atomic_corrupt_payload(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);site=root/'site';site.mkdir();(site/'keep.txt').write_bytes(b'unchanged')
@@ -68,11 +70,14 @@ class DeltaTests(unittest.TestCase):
             patch=json.dumps(self.patch).encode();(payload/'play.pck.delta.json').write_bytes(patch)
             for name,data,mode,pdata,pname in [('build-info.json',info,'file',info,'build-info.json'),('play.pck',self.target,'delta',patch,'play.pck.delta.json')]:
                 files[name]={'mode':mode,'size':len(data),'sha256':sha(data),'payload':'payload/'+pname,'payload_sha256':sha(pdata)}
+            public=b'<html>Public design spec</html>';(payload/'spec-index.html').write_bytes(public)
+            files['spec/index.html']={'mode':'file','size':len(public),'sha256':sha(public),'payload':'payload/spec-index.html','payload_sha256':sha(public)}
             files['play-v0.0.3.pck']=files.pop('play.pck');files['play-v0.0.3.pck']['source']='play.pck'
             request=root/'current.json';request.write_text(json.dumps({'format':1,'version':'0.0.3','baseline_files':baseline,'files':files}))
             apply_trial(site,request)
             self.assertEqual((site/'play-v0.0.3.pck').read_bytes(),self.target)
-            self.assertEqual(set(p.name for p in site.iterdir()),set(files))
+            self.assertEqual(set(p.relative_to(site).as_posix() for p in site.rglob('*') if p.is_file()),set(files))
+            self.assertEqual((site/'spec/index.html').read_bytes(),public)
             self.assertFalse((root/'site.baseline').exists())
 
 if __name__=='__main__':unittest.main()
