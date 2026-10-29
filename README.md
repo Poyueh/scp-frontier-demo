@@ -1,10 +1,10 @@
-# SCP Frontier — 林緣失聯前哨
+# SCP Frontier — 失聯的第九哨站
 
 [開始試玩](https://poyueh.github.io/scp-frontier-demo/) · [公開企劃書](https://poyueh.github.io/scp-frontier-demo/spec/) · [操作指南](https://poyueh.github.io/scp-frontier-demo/guide.html) · [v0.0.2 下載與紀錄](https://github.com/Poyueh/scp-frontier-demo/releases/tag/v0.0.2)
 
 你是重建指揮官。啟動前哨、安排工程師、沿訊號探索廊道，取回脈衝裝置，再觀察並重新隔離 SCP-280。
 
-v0.0.5 是森林前線試玩版：直接載入遊戲主選單，提供原生鍵盤、滑鼠與手機觸控操作。遊戲企劃規格、玩家圖文指南及來源授權可獨立閱讀。手機實機效能與畫面手感仍需驗測。
+v0.0.6 是「失聯的第九哨站」試玩版：直接載入遊戲主選單，從運輸車抵達、領取裝備與停電調查展開新開場；提供鍵盤、滑鼠與手機觸控操作。遊戲企劃規格、玩家圖文指南及來源授權可獨立閱讀。手機實機效能與畫面手感仍需驗測。
 
 A／D 移動，同向雙按並按住衝刺；J／左鍵連斬；E 互動與投入能源晶；K 技能；Esc 暫停。手機使用畫面觸控區。進度保存在目前瀏覽器和網站；清除網站資料會刪除紀錄。
 
