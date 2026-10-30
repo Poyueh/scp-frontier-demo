@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "game_version": "0.0.7",
-  "revision": 234,
-  "updated": "2026-10-29",
-  "content_sha256": "7988d963ed244818b8191af7075c05feb35b3675bbeaf85b753d1bd94ad38fd0",
+  "game_version": "0.0.8",
+  "revision": 235,
+  "updated": "2026-10-30",
+  "content_sha256": "c4c38f0aec95905143744c5acb96a8b858b1bc07efcb9d88921924e2136e5eb1",
   "files": {
-    "index.html": "100aeaa4570fcea7c4e3d22c2d9bfd6cfd6913eed622641f2848aac7a1e6b449",
+    "index.html": "a96a13bc88f34dfda5afe72835be8ee43460b3805b980e4fbf6f3164f98372fa",
     "reader.js": "6cc33a6ae719d50267acced5b925c88847b45550adfa92b61b9200a10fec7a4d",
     "style.css": "db898ef6d830f3adb0dd712ae7f57c6148a9ed2d2a5a002dd0a0b26ad89d30ef"
   }
