@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "version": "0.0.9",
+  "version": "0.0.11",
   "baseline_tag": "v0.0.85",
   "baseline_repository": "Poyueh/cyber-kingdom-demo",
   "baseline_files": {
@@ -86,11 +86,11 @@
       "payload_sha256": "ebd49813ff723efd83651bd08ce44e96536a492af79e494c8e03a64f3748406a"
     },
     "README.txt": {
-      "size": 1462,
-      "sha256": "cf8490a5bf0ed37611e7a3ff2ab2a3936f2354869b4c327f4193c079d5ff64cc",
+      "size": 1631,
+      "sha256": "d5a7a67afdb0fa653d3378729da3e29e4ce5c38d80f94e0bccbc093d2c5a6534",
       "mode": "file",
       "payload": "payload/README.txt",
-      "payload_sha256": "cf8490a5bf0ed37611e7a3ff2ab2a3936f2354869b4c327f4193c079d5ff64cc"
+      "payload_sha256": "d5a7a67afdb0fa653d3378729da3e29e4ce5c38d80f94e0bccbc093d2c5a6534"
     },
     "credits.html": {
       "size": 2486,
@@ -122,37 +122,37 @@
       "payload_sha256": "120e10c1f9922f569cf5904b93ec217ff9341b867a1118c41240266dffa8e6f5"
     },
     "guide.html": {
-      "size": 38506,
-      "sha256": "e3b24f33da10c44962219d07aa586ab3c22c00233f1e0542da95ddf9cbc11525",
+      "size": 44150,
+      "sha256": "2bb0d5d8c0f7a30f473d64ffb8294d4bca91251e8552b034c499f057ccdefdb4",
       "mode": "file",
       "payload": "payload/guide.html",
-      "payload_sha256": "e3b24f33da10c44962219d07aa586ab3c22c00233f1e0542da95ddf9cbc11525"
+      "payload_sha256": "2bb0d5d8c0f7a30f473d64ffb8294d4bca91251e8552b034c499f057ccdefdb4"
     },
-    "index-v0.0.9.pck": {
-      "size": 83529612,
-      "sha256": "cfb4bf7fcd218e39e2b4eb312c6c86305d90bae4dddce461d00a19ac6f2f4405",
+    "index-v0.0.11.pck": {
+      "size": 83578532,
+      "sha256": "d36511246d403757374921cdd5d2a2ca999acefa5fc843a2393215e0e7c921ea",
       "mode": "delta",
       "source": "index.pck",
       "payloads": [
         {
-          "path": "payload/index-v0.0.9.pck.delta.json.part000",
-          "sha256": "b04cf684989174ef2b3b9d39bbd6611628fe700e7626e22063dc18f50d43dd24"
+          "path": "payload/index-v0.0.11.pck.delta.json.part000",
+          "sha256": "1ec9e99f99f7b236b0a3d63994e39bc4e98ecb9c97f7b01bc1363f777f2b93be"
         },
         {
-          "path": "payload/index-v0.0.9.pck.delta.json.part001",
-          "sha256": "2654aab8a44b2305f944ed9abbd657d9df69241cbf0ce9ddaad1892bb77c120c"
+          "path": "payload/index-v0.0.11.pck.delta.json.part001",
+          "sha256": "e40173f3844c74c0575aea757d126d9647f981049f39716c9b4b88d094a118ce"
         },
         {
-          "path": "payload/index-v0.0.9.pck.delta.json.part002",
-          "sha256": "a6a75a592fced37a589daea08d79cd16d1ef0dbf502de7c32ad782841bf1dc81"
+          "path": "payload/index-v0.0.11.pck.delta.json.part002",
+          "sha256": "c029ac6c89d5a88a3bbbb82e640ae4f953662b2f1d023fc5d5bdd3a683c7d984"
         },
         {
-          "path": "payload/index-v0.0.9.pck.delta.json.part003",
-          "sha256": "fc3977dce09320ab55b835479437c0886a65506be797eeadb91995609a6f96e4"
+          "path": "payload/index-v0.0.11.pck.delta.json.part003",
+          "sha256": "de1b9bd51fb6a4d924cee8fb7a45c786e4654a95fe97ec3d0208b208e347146d"
         },
         {
-          "path": "payload/index-v0.0.9.pck.delta.json.part004",
-          "sha256": "d20feff5be686b9d7b54bf909e8456d0ae701b9ab32f4d34761f4908474f819c"
+          "path": "payload/index-v0.0.11.pck.delta.json.part004",
+          "sha256": "770077105d4edfd4063fa20aeb4649881a70e53ce785e982f4fa8d8b5377d8c0"
         }
       ]
     },
@@ -174,11 +174,11 @@
       "mode": "keep"
     },
     "index.html": {
-      "size": 7754,
-      "sha256": "219bb14da6051ec8e246e8d4a03eeb4d31ef9844f9cb08d1bfe8fcc78bc2ed7e",
+      "size": 7757,
+      "sha256": "d8b09aaaf275dde5cc54bb1c22bc8e2aa23e7ecf7acfed8e2afaaa2b88c56f7a",
       "mode": "file",
       "payload": "payload/index.html",
-      "payload_sha256": "219bb14da6051ec8e246e8d4a03eeb4d31ef9844f9cb08d1bfe8fcc78bc2ed7e"
+      "payload_sha256": "d8b09aaaf275dde5cc54bb1c22bc8e2aa23e7ecf7acfed8e2afaaa2b88c56f7a"
     },
     "index.icon.png": {
       "size": 5616,
@@ -234,18 +234,18 @@
       "payload_sha256": "aecb68975af10e993670b8793ec615643db0d8c100594f5077cc4054455a9952"
     },
     "spec/index.html": {
-      "size": 28734,
-      "sha256": "628bb1dc98c60edd56ad7d4bd8fa235c4b6ac8d149068c8634cb3a21bd28549a",
+      "size": 38512,
+      "sha256": "1ac46052ba0e09301806833765ac9ead1269a4ab520b42cbd8e488ef4a391a5e",
       "mode": "file",
       "payload": "payload/spec-index.html",
-      "payload_sha256": "628bb1dc98c60edd56ad7d4bd8fa235c4b6ac8d149068c8634cb3a21bd28549a"
+      "payload_sha256": "1ac46052ba0e09301806833765ac9ead1269a4ab520b42cbd8e488ef4a391a5e"
     },
     "spec/manifest.json": {
-      "size": 452,
-      "sha256": "fdb2591a1eed69098448b0a0dc468f7f87f6ecc1117387070fb973d1ca1d6947",
+      "size": 453,
+      "sha256": "21159711bc7770872ec4be4a1a530d084cecc414eb4edecfa8c046d4b31094e5",
       "mode": "file",
       "payload": "payload/spec-manifest.json",
-      "payload_sha256": "fdb2591a1eed69098448b0a0dc468f7f87f6ecc1117387070fb973d1ca1d6947"
+      "payload_sha256": "21159711bc7770872ec4be4a1a530d084cecc414eb4edecfa8c046d4b31094e5"
     },
     "spec/reader.js": {
       "size": 2706,
@@ -275,6 +275,6 @@
     "size": 93308072,
     "sha256": "bf8dfb8cfef06bd9e12ff97b119c871b678f13245c21c8bd19d5eb4e442b550e"
   },
-  "source_commit": "d70328d0d992a30140d7b9c24dacc26d688cd340",
-  "export_archive_sha256": "40672367053c34b738a5b472ade3a50431531b0b19673907d945072d9de0ccdc"
+  "source_commit": "02f6bd3af15a3b4199637a16f0d2c31dce2bc173",
+  "export_archive_sha256": "882711a0e19e432416d99586bc36efc3c72c968eded4027e9b27f091d054de49"
 }
